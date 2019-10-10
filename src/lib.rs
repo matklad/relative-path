@@ -809,6 +809,7 @@ impl RelativePath {
     /// let path = RelativePath::new("foo/bar");
     /// assert_eq!("foo/bar/baz", path.join("baz"));
     /// ```
+    #[must_use]
     pub fn join<P: AsRef<RelativePath>>(&self, path: P) -> RelativePathBuf {
         let mut out = self.to_relative_path_buf();
         out.push(path);
